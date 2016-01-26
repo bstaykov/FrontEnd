@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript - Fundamentals</title>
+</head>
+<body>
+    <script>
+        var student = {
+            'name': {
+                'first': 'ivan',
+                'second': 'todorov'
+            },
+            'age': 21,
+        };
+
+        console.log(student);
+        console.log(student.name);
+        console.log(student.name.first);
+        console.log(student.name.second);
+        console.log(student.age);
+
+        console.log('age' in student);
+        console.log('name' in student);
+        console.log('first' in student.name);
+        console.log('Student has first name: ' + ('name' in student ? 'first' in student.name : false));
+
+        var number,
+            i,
+            numbers = [10, 11, 12];
+        numbers[4] = 21;
+        console.log(numbers);
+        for (i in numbers) {
+            console.log(i);
+        }
+        console.log();
+        for (number of numbers) {
+            console.log(number);
+        }
+    </script>
+</body>
+</html>

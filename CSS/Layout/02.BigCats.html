@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Big Cats</title>
+    <link href="02.BigCats.css" rel="stylesheet" />
+</head>
+<body>
+		<ul class="ul-main">
+			<li class="li-main">
+				<label for="radio1" class="cat1 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio2" class="cat2 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio3" class="cat3 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio4" class="cat4 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio5" class="cat5 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio6" class="cat6 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio7" class="cat7 small-pic"></label></li>			
+			<li class="li-main">
+				<label for="radio1" class="cat1 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio2" class="cat2 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio3" class="cat3 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio4" class="cat4 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio5" class="cat5 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio6" class="cat6 small-pic"></label></li>
+			<li class="li-main">
+				<label for="radio7" class="cat7 small-pic"></label></li>
+		</ul>
+		
+		<div class="relative-div clearfix">
+			<input type="radio" name="cat" id="radio1" checked="checked" />
+			<div id="radio1img" class="big-pic radio1-cat-large"></div>
+			<input type="radio" name="cat" id="radio2" />
+			<div id="radio2img" class="big-pic radio2-cat-large"/></div>
+			<input type="radio" name="cat" id="radio3" />
+			<div id="radio3img" class="big-pic radio3-cat-large"/></div>
+			<input type="radio" name="cat" id="radio4" />
+			<div id="radio4img" class="big-pic radio4-cat-large"/></div>
+			<input type="radio" name="cat" id="radio5"/>
+			<div id="radio5img" class="big-pic radio5-cat-large"/></div>
+			<input type="radio" name="cat" id="radio6" />
+			<div id="radio6img" class="big-pic radio6-cat-large"/></div>
+			<input type="radio" name="cat" id="radio7" />
+			<div id="radio7img" class="big-pic radio7-cat-large"/></div>
+		</div>
+	<script>
+        var labels = document.getElementsByTagName('label');
+        for (var i = 0; i < labels.length; i++) {
+            labels[i].addEventListener('mouseover', function () {
+                document.getElementById(this.htmlFor + 'img').className += " hoveredPic";
+            });
+            labels[i].addEventListener('mouseout', function () {
+                document.getElementById(this.htmlFor + 'img').className = 'big-pic ' + this.htmlFor + '-cat-large';
+            });
+        }
+    </script>
+</body>
+</html>

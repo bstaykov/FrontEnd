@@ -1,0 +1,159 @@
+﻿/* reset */
+body, div, p, strong, span, label, input, h1, h2, h3, h4, h5, h6, section, article, nav, aside, header, footer, ul, li, ol {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+ol, ul {
+    list-style-type: none;
+}
+
+/* css */
+body {
+    text-align: justify;
+    margin: 20px;
+    background-color: #cacaca;
+}
+
+.clearfix {
+    overflow: auto;
+    height: 250px;
+}
+
+.borderForTests, li {
+    border: 1px solid #000;
+}
+
+.leftFloatText {
+    float: left;
+    clear: left;
+    margin: 10px 10px 10px 0;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.noFloatOnLeft {
+    clear: left;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+
+.noFloatOnRight {
+    clear: right;
+    float: right;
+    margin: 10px 0 10px 10px;
+}
+
+.clear{
+    clear: both;
+    float: left;
+}
+
+.overflow {
+    width: 300px;
+    height: 200px;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.inline-block-ul li {
+    color: #fff;
+    display: inline-block;
+}
+
+    .inline-block-ul li:hover {
+        background-color: #967d7d;
+    }
+
+.resizedDiv {
+    width: 200px;
+    margin: 10px;
+}
+
+
+.topDiv {
+    margin-bottom: 5px;
+}
+
+.bottomDiv {
+    width: 170px;
+    padding: 10px;
+    border-width: 6px;
+}
+
+/* positioning */
+
+.position-before, .position-after{
+    background-color: #fd0;
+}
+
+.position-relative1{
+    position: relative;
+    left: 10px;
+    background-color: #3a0;
+}
+
+.position-relative2{
+    position: relative;
+    background-color: #0ff;
+    overflow: scroll;
+    width: 600px;
+    height: 400px;
+}
+
+.position-relative-in-relative{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.position-absolute-in-relative{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-color: #977;
+}
+
+.position-relative-in-absolute{
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 200px;
+    background-color: #fd0;
+}
+
+.position-fixed{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: 200px;
+    background-color: #fd0;
+}
+
+.vertical-align{
+    vertical-align: super;
+}
+

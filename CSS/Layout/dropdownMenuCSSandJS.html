@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS - Dropdown Menu CSS and JS</title>
+    <link href="dropdownMenuCSSandJS.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <input id="menu1" type="radio" class="menu-show-hide" name="menu" />
+                <label for="menu1" class="menu-label">Menu 1</label>
+                <ul class="subMenu">
+                    <li>
+                        <a href="#">Item 01 dadawd few ferw fewrf</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 02</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 03</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input id="menu2" type="radio" class="menu-show-hide" name="menu"/>
+                <label for="menu2" class="menu-label">Menu 2</label>
+                <ul class="subMenu">
+                    <li>
+                        <a href="#">Item 04</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 05</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 06</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input id="menu3" type="radio" class="menu-show-hide" name="menu" />
+                <label for="menu3" class="menu-label">Menu 3</label>
+                <ul class="subMenu">
+                    <li>
+                        <a href="#">Item 07</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 08</a>
+                    </li>
+                    <li>
+                        <a href="#">Item 09</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        var labels = document.getElementsByClassName('menu-label'),
+            i,
+            length,
+            radioButton;
+        for (i = 0, length = labels.length; i < length; i += 1) {
+            labels[i].addEventListener('click', function () {
+                radioButton = document.getElementById(this.htmlFor);
+                if (radioButton.checked) {
+                    setTimeout(function () {
+                        radioButton.checked = false;
+                    }, 10);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

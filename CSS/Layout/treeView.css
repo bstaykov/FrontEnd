@@ -1,0 +1,87 @@
+﻿body, div, p, strong, span, label, input, h1, h2, h3, h4, h5, h6, section, article, nav, aside, header, footer, ul, li, ol {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+body {
+    background-color: #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+ol, ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 5px;
+    padding-left: 15px;
+    background-color: #bbb;
+}
+
+    li:hover {
+        background-color: #aaa;
+    }
+
+    li li a {
+        color: #888;
+    }
+
+        li li a:hover {
+            color: #000;
+        }
+
+/* dropdown */
+ol ol {
+    display: none;
+}
+
+@-webkit-keyframes showLinks {
+    from {
+        display: none;
+    }
+
+    to {
+        display: block;
+    }
+}
+
+@-moz-keyframes showLinks {
+    from {
+        display: none;
+    }
+
+    to {
+        display: block;
+    }
+}
+
+@keyframes showLinks {
+    from {
+        display: none;
+    }
+
+    to {
+        display: block;
+    }
+}
+
+li:hover > ol {
+    display: block;
+    -webkit-animation-name: showLinks;
+    -webkit-animation-duration: 4s;
+    -moz-animation-name: showLinks;
+    -moz-animation-duration: 4s;
+    -o-animation-name: showLinks;
+    -o-animation-duration: 4s;
+    animation-name: showLinks;
+    animation-duration: 4s;
+}

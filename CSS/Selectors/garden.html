@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Garden - flowers, trees, decoration</title>
+    <link href="garden.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container tab">
+        <header>
+            <h1>Garden of the gardens!!!</h1>
+        </header>
+        <nav class="links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#Products">Products</a></li>
+                <li><a href="#Facts">Facts</a></li>
+                <li><a href="#Prices">Prices</a></li>
+                <li><a id="contactsLink" href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+        <br />
+        <hr />
+        <section id="pagesSection">
+            <article id="Products">
+                <h3>Products</h3>
+                <p>Products Products Products</p>
+            </article>
+
+            <article id="Facts">
+                <h3>Facts</h3>
+                <p>Facts Facts Facts</p>
+            </article>
+            <article id="Prices">
+                <h3>Prices</h3>
+                <p>Prices Prices Prices</p>
+                <input type="text" value="" />
+            </article>
+            <article id="Home">
+                <h3>Home</h3>
+                <p>Hello World!</p>
+            </article>
+        </section>
+        <div id="contacts" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <header class="modal-container">
+                        <a id="closeBtn" href="#Prices" class="closebtn">×</a>
+                        <h2>Modal Header</h2>
+                    </header>
+                    <div class="modal-container">
+                        <h3>Contacts</h3>
+                        <p>Contacts Contacts Contacts</p>
+                    </div>
+                    <footer class="modal-container">
+                        <p>Modal footer</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('contactsLink').addEventListener('click', function () {
+            document.getElementById('pagesSection').style.display = 'none';
+            console.log('Hide');
+        })
+
+        document.getElementById('closeBtn').addEventListener('click', function () {
+            document.getElementById('pagesSection').style.display = 'block';
+            console.log('show');
+        })
+    </script>
+</body>
+</html>

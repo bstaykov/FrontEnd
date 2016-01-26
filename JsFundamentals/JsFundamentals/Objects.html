@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Javascript - Objects</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName, age, town, postalCode) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.address = {
+                town: town,
+                postalCode: postalCode,
+            };
+            this.fullName = function(){
+                return this.firstName + ' ' + this.lastName;
+            };
+        }
+
+        var person1 = new Person('Pesho', 'Peshov', 21, 'Sofia', '1000');
+        console.log(person1.firstName);
+        console.log(person1.fullName());
+        console.log(person1.address);
+        console.log(person1 instanceof Person);
+    </script>
+</body>
+</html>

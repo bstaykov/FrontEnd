@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms</title>
+</head>
+<body>
+    <form name="formName" method="post" action="/actionName">
+        <fieldset>
+            <legend>User Info</legend>
+            <label for="name">Name</label>
+            <input id="name" type="text" value="Pesho" placeholder="Name" name="name" tabindex="1" required="required" autocomplete="on"/>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password" name="password" tabindex="3" required="required" autocomplete="on"/>
+            <br />
+            <br />
+            <textarea readonly="readonly">Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!Terms and conditions!!!</textarea>
+            <br />
+            <label for="male">Male</label>
+            <input id="male" type="radio" name="gender" value="male" tabindex="2" />
+            <label for="female">Female</label>
+            <input id="female" type="radio" name="gender" value="female" tabindex="4" />
+            <br />
+        </fieldset>
+
+        <fieldset>
+            <legend>Other info</legend>
+            <label for="age">Age</label>
+            <select id="age">
+                <option value="1">1</option>
+                <option value="2" selected="selected">2</option>
+                <option value="3">3</option>
+            </select>
+            <br />
+            <label for="transport">Transport</label>
+            <select id="transport" multiple="multiple">
+                <option value="car" selected="selected">Car</option>
+                <option value="train" selected="selected">Train</option>
+                <option value="buss">Buss</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Other</legend>
+            <input type="range" value="50" min="10" max="100" step="10"/>
+            <input type="number" value="500" min="0" max="1000" step="100"/>
+            <input type="email" value="" required="required" autocomplete="on" />
+            <input type="url" value="" required="required" autocomplete="on"/>
+            <input type="tel" value="" required="required" />
+        </fieldset>
+
+        <input type="hidden" value="HIDDENPASSWORD" />
+        <br />
+        <input type="button" value="Button" tabindex="5" />
+        <input type="submit" value="Submit" tabindex="7" />
+        <input type="reset" value="Reset" tabindex="6" />
+    </form>
+</body>
+</html>

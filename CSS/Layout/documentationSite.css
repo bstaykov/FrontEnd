@@ -1,0 +1,62 @@
+﻿@import url(reset.css);
+
+body{
+    background-color: #eee;
+    padding: 5%;
+}
+
+header, nav, section, aside, footer{    
+    border: 1px solid #000;
+    background-color: #ddd;
+}
+
+header:hover, nav:hover, section:hover, aside:hover, footer:hover{
+    background-color: #ccc;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header{
+    font-size: 3em;
+    overflow: auto;
+}
+
+header{
+    width: 88% auto;
+    padding: 2%;
+}
+
+nav{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 6% auto;
+    padding: 2%;
+}
+
+section{
+    display: inline-block;
+    float: left;
+    width: 64%;
+    min-width: 250px;
+    padding: 2%;
+}
+
+aside{
+    display: inline-block;
+    float: left;
+    width: 16%;
+    padding: 2%;
+}
+
+footer{
+    width: 90% auto;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.clearfix{
+   clear: both;
+}

@@ -1,0 +1,191 @@
+﻿body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Inherited styles */
+
+#outerDiv{
+    color: #808080;
+    font-size: 20px;
+    font-family: Tahoma, 'Times New Roman';
+    line-height: 25px;
+    text-align:center;
+    background-color: #ffffff;
+}
+
+/* Not Inherited styles */
+
+#outerDiv{
+    border: 1px solid #ff0000;
+    padding: 20px;
+    margin: 30px;
+    width: 350px;
+    height: 300px;
+    float: left;
+}
+
+#outerList{    
+    border: 1px solid black;
+    list-style: upper-alpha;
+}
+
+/* Other styles */
+
+div span{
+    background-color: #808080;
+}
+
+div > span{
+    background-color: #ff0000;
+}
+
+div + h6{
+    background-color: #b6ff00;
+}
+
+.redDiv{
+    background-color: #ff0000;
+}
+
+.titleDiv{
+    font-size: 30px;
+}
+
+.redDiv.titleDiv{
+    font-style: italic;
+}
+
+/* Attribute selectors */
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* Attribute Selectors */
+
+a[href]{
+    background-color: #fb8686;
+}
+
+a[href=telerik]{
+    background-color: #ff6a00;
+}
+
+a[href*=lerik]{
+    font-size: 25px;
+}
+
+a[href^=telerik]{
+    font-style: italic;
+}
+a[href$=academy]{
+    color: #78eeee;
+}
+
+a[title=very]{
+    font-size: 30px;
+}
+
+a[title*=very]{
+    font-style: italic;
+}
+
+a:not([title*=very]){
+    font-size: 40px;
+}
+
+/* Pseudo Selectors */
+
+p:first-line{
+    background-color:#808080;
+}
+
+p:first-letter{
+    font-size: 30px;
+}
+
+p:before, p:after{
+    content: '"';
+}
+
+:root{
+    background-color: #e2e2e2;
+}
+
+table, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr:nth-child(2n+1){
+    background-color: #ba8989;
+}
+
+tr:last-child{
+    background-color: #ac5252;
+}
+
+tr:nth-last-child(2n){
+    background-color: #78eeee;
+}
+
+#noContent{
+    display: none;
+}
+
+table:empty + #noContent{
+    display: inline-block;
+}
+
+.preceded{
+    display:none;
+}
+
+#noContent ~ .preceded{
+    display:block;
+}
+
+#postContent{
+    background-color: rgb(100, 32, 123)
+}
+
+#postContent:hover{
+    background-color: rgba(151, 86, 43, 0.40)
+}
+
+.tab p {
+    display: none;
+}
+
+.tab p:target {
+    display: block;
+}
+
+div p{
+  background-color: #5cb85c;
+}
+
+a:hover{
+    cursor: no-drop;
+}
+
+label{
+    opacity: 0.5;
+}
+
+input:checked + label{
+    opacity: 1;
+}
+
+label:hover{
+    opacity: 1;
+}
+
+div ~ article{
+    border: 1px solid #ff0000;
+}

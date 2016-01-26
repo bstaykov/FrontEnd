@@ -1,0 +1,39 @@
+﻿body, ul, li, ol, div {
+    margin:0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+nav > ul > li{
+    display: inline-block;
+    position: relative;
+}
+
+nav > ul > li > ul{
+    position: absolute;
+    display: none;
+}
+
+.menu-show-hide{
+    display: none;
+}
+
+/*nav > ul > li:hover > ul{
+    display: block;
+}*/
+
+.menu-show-hide:checked + label + ul{
+    display: block;
+}
+
+.menu-label:after{
+    content: '▼';
+}
+
+.menu-show-hide:checked ~ label:after{
+    content: '▲';
+}
+

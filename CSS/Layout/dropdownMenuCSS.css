@@ -1,0 +1,98 @@
+﻿body, ul, li, ol, div {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body > ul > li {
+    display: inline-block;
+    position: relative;
+}
+
+    body > ul > li > ul {
+        width: 200px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: none;
+        border: 1px solid #000;
+        background-color: #5f9;
+
+    }
+
+.hiddeMenuLabel, input {
+    display: none;
+}
+
+    .hiddeMenuLabel:after {
+        content: '▲';
+    }
+
+.showMenuLabel:after {
+    content: '▼';
+}
+
+.menu-show-radio:checked + label + label + ul {
+    display: block;
+}
+
+.menu-show-radio:checked ~ .hiddeMenuLabel {
+    display: inline-block;
+}
+
+.menu-show-radio:checked ~ .showMenuLabel {
+    display: none;
+}
+
+/* shadow efects */
+
+body{
+    background-color: #000;
+}
+
+body > ul{
+    margin: 20px;
+    font-size: 1.2em;
+    
+}
+
+    body > ul > li {
+        width: 200px;
+        height: 50px;
+        padding: 20px;
+        background-color: #0f2;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-collapse: collapse;
+        border: 1px solid #888;
+        border-right: 1px solid #0f2;
+        z-index: 5;
+        box-shadow: 0;
+        -moz-transition: box-shadow 0.5s;
+        -o-transition: box-shadow 0.5s; box-shadow 0.5s; box-shadow 0.5s; box-shadow 0.5s; box-shadow 0.5s;
+        -webkit-transition: box-shadow 0.5s;
+        transition: box-shadow 0.5s;
+    }
+
+    body > ul > li:hover, body > ul > li:hover + li  {
+        border-left: 1px solid #0f2;
+    }
+
+    body > ul > li:last-child{
+        border-right: 1px solid  #888;
+    }
+
+    body > ul > li:last-child:hover{
+        border-right: 1px solid #0f2;
+    }
+
+body > ul > li:hover{
+    border-top: 1px solid #0f2;
+    border-bottom: 1px solid #0f2;
+    box-shadow: 0 0 3px 1px #000;
+        z-index: 6;
+}

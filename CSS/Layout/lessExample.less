@@ -1,0 +1,48 @@
+﻿// variables
+@textColor: #808080;
+
+//build in functions
+@lightenColor: lighten(@textColor, 10%); 
+@darkenColor: darken(@textColor, 20%);
+
+body {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    color: @textColor;
+    font-weight: bold;
+
+    // nesting
+    a{
+        text-decoration: none;
+        color: @lightenColor;
+
+        &:hover{
+            text-decoration: underline;
+            color: @darkenColor;
+        }
+    }
+
+    // extends classes properties
+    p span {
+        &:extend(.importantLink, .border);
+        .fontSize(2em); // use of custom function
+    }
+}
+
+.importantLink{
+    background-color: #ff6a00;
+    color: #2c0;
+
+}
+
+.border{
+    border: 5px solid #000;
+
+}
+
+// custom functions with default value
+.fontSize(@size: 20px) {
+    font-size: @size;
+}
