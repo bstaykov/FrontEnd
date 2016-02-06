@@ -5,36 +5,44 @@
 </head>
 <body>
     <script>
-        function addCookie(cookieKey, cookieValue) {
-            var now = new Date();
-            var time = now.getTime();
-            var expireTime = time + 1000 * 10;
-            now.setTime(expireTime);
-            var cookie = cookieKey + '=' + cookieValue + '; expires=' + now.toGMTString() + '+0200;';
-            document.cookie = cookie
+        var windowLoadIndex = window.onload;
+        window.onload = function () {
+            if (windowLoadIndex) {
+                windowLoadIndex();
+            }
+
+            function addCookie(cookieKey, cookieValue) {
+                var now = new Date();
+                var time = now.getTime();
+                var expireTime = time + 1000 * 10;
+                now.setTime(expireTime);
+                var cookie = cookieKey + '=' + cookieValue + '; expires=' + now.toGMTString() + '+0200;';
+                document.cookie = cookie
+            }
+
+            // session storage
+            Storage.prototype.setObject = function (key, obj) {
+                this.setItem(key, JSON.stringify(obj));
+            }
+
+            Storage.prototype.getObject = function (key) {
+                return JSON.parse(this.getItem(key));
+            }
+
+            function storageTest() {
+                sessionStorage.setObject('key1', { name: 'sessionStorage' });
+                console.log(sessionStorage.getObject('key1'));
+                console.log(sessionStorage);
+
+                localStorage.setObject('key1', { name: 'localStorage' });
+                console.log(localStorage.getObject('key1'));
+                console.log(localStorage);
+            }
+
+            storageTest();
         }        
-        
-        // session storage
-        Storage.prototype.setObject = function (key, obj) {
-            this.setItem(key, JSON.stringify(obj));
-        }
-
-        Storage.prototype.getObject = function (key) {
-            return JSON.parse(this.getItem(key));
-        }
-
-        function storageTest() {
-            sessionStorage.setObject('key1', { name: 'sessionStorage' });
-            console.log(sessionStorage.getObject('key1'));
-            console.log(sessionStorage);
-
-            localStorage.setObject('key1', { name: 'localStorage' });
-            console.log(localStorage.getObject('key1'));
-            console.log(localStorage);
-        }
-
-        storageTest();
 
     </script>
+    <script src="shipGame.js"></script>
 </body>
 </html>
