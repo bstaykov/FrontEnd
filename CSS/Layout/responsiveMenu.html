@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Responsive Menu</title>
+    <link href="responsiveMenu.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <input type="radio" name="dropdown" id="hideMenuInput" class="menuHiddenRadio" />
+        <input type="radio" name="dropdown" id="showMenuInput" class="menuHiddenRadio" />
+        <label class="showSmallMenuLabel" for="showMenuInput">Menu</label>
+        <label class="hideSmallMenuLabel" for="hideMenuInput">Menu</label>
+        <ul id="menu">
+            <li>
+                <label for="home">
+                    Home
+                </label>
+            </li>
+            <li>
+                <label for="galery">
+                    Galery
+                </label>
+            </li>
+            <li>
+                <label for="promotions">
+                    Promotions
+                </label>
+            </li>
+            <li>
+                <label for="partners">
+                    Partners
+                </label>
+            </li>
+            <li>
+                <label for="modalRadioShow">Contacts</label>
+            </li>
+        </ul>
+        <section>
+            <input type="radio" name="article" id="home" checked="checked" class="articleSelector" />
+            <article>
+                Home integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+                Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+            </article>
+            <input type="radio" name="article" id="galery" class="articleSelector" />
+            <article>
+                Galery suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+            </article>
+            <input type="radio" name="article" id="promotions" class="articleSelector" />
+            <article>
+                Promotions suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+            </article>
+            <input type="radio" name="article" id="partners" class="articleSelector" />
+            <article>
+                Partners suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
+                <hr />
+            </article>
+        </section>
+    </div>
+    <input type="radio" name="modal" id="modalRadioHide" class="targetInputs" />
+    <input type="radio" name="modal" id="modalRadioShow" class="targetInputs" />
+    <div id="contacts" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <header class="modal-container">
+                    <label id="closeBtn" class="closebtn" for="modalRadioHide">×</label>
+                    <h2>Modal Header</h2>
+                </header>
+                <div class="modal-container">
+                    <h3>Contacts</h3>
+                    <p>Contacts Contacts Contacts</p>
+                </div>
+                <footer class="modal-container">
+                    <p>Modal footer</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

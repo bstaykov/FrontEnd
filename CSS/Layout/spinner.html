@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spinner</title>
+    <script src="libs/jquery-2.1.4.js"></script>
+    <style>
+        body {
+            background-image: url("http://vignette4.wikia.nocookie.net/nintendo/images/3/3e/MTO_Tennis_Ball.png/revision/latest/scale-to-width-down/240?cb=20120504075543&path-prefix=en");
+        }
+
+        /* just load something big */
+        img.large {
+            display: none;
+        }
+
+        #ball {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 20px;
+            width: 50px;
+            height: 50px;
+            background-image: url("http://vignette4.wikia.nocookie.net/nintendo/images/3/3e/MTO_Tennis_Ball.png/revision/latest/scale-to-width-down/240?cb=20120504075543&path-prefix=en");
+            background-size: contain;
+            -webkit-animation-name: spin;
+            -webkit-animation-duration: 2000ms;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-name: spin;
+            -moz-animation-duration: 2000ms;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-timing-function: linear;
+            -ms-animation-name: spin;
+            -ms-animation-duration: 2000ms;
+            -ms-animation-iteration-count: infinite;
+            -ms-animation-timing-function: linear;
+            animation-name: spin;
+            animation-duration: 2000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @-ms-keyframes spin {
+            from {
+                -ms-transform: rotate(0deg);
+            }
+
+            to {
+                -ms-transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spin {
+            from {
+                -moz-transform: rotate(0deg);
+            }
+
+            to {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            position: absolute;
+            left: 50%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Add animation (Chrome, Safari, Opera) */
+        @-webkit-keyframes example {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Add animation (Standard syntax) */
+        @keyframes example {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* The modal's background */
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(51, 51, 51);
+        }
+
+        /* The modal box */
+        .modal-dialog {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="ball"></div>-->
+    <button id="request">Refresh</button>
+    <div id="resultAjax"></div>
+    <img src="images/large.jpg" alt="Large PIC" class="large" />
+    <div id="modal" class="modal">
+        <div class="modal-dialog">
+            <img class="spinner" src="images/spiffygif333color.gif" alt="spinner" id="spinner" />
+        </div>
+    </div>
+
+    <script>
+        function load() {
+            var modal = document.getElementById('modal');
+            modal.style.display = 'table';
+            setTimeout(function () {
+                modal.style.display = 'none';
+            }, 1000);
+        }
+
+        // document.getElementById('request').addEventListener('click', load);
+
+        function showModal() {
+            $('#modal').css('display', 'table');
+        }
+
+        function hideModal() {
+            $('#modal').css('display', 'none');
+        }
+
+        showModal();
+
+        var oldWindowOnLoadIndex = window.onload;
+        window.onload = function () {
+            if (oldWindowOnLoadIndex) {
+                oldWindowOnLoadIndex();
+            }
+
+            $(document)
+                .ajaxStart(function () {
+                    showModal();
+                }).ajaxStop(function () {
+                    // make it visible when testing
+                    setTimeout(function () {
+                        hideModal();
+                    }, 300);
+                });
+
+            $("#request").click(function () {
+                $("#resultAjax").load("partials/time.html");
+
+                //$.get("partials/time.html", function (data) {
+                //    $("#resultAjax").html(data);
+                //    console.log('get');
+                //});
+            });
+
+            hideModal();
+        }
+    </script>
+</body>
+</html>

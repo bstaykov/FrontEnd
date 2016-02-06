@@ -15,7 +15,7 @@
                 <li><a href="#Products">Products</a></li>
                 <li><a href="#Facts">Facts</a></li>
                 <li><a href="#Prices">Prices</a></li>
-                <li><a id="contactsLink" href="#contacts">Contacts</a></li>
+                <li><label id="contactsLink" for="modalRadioShow" class="fakeLink">Contacts</label></li>
             </ul>
         </nav>
         <br />
@@ -40,11 +40,13 @@
                 <p>Hello World!</p>
             </article>
         </section>
+        <input type="radio" name="modal" id="modalRadioHide" class="targetInputs"/>
+        <input type="radio" name="modal" id="modalRadioShow" class="targetInputs" />
         <div id="contacts" class="modal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <header class="modal-container">
-                        <a id="closeBtn" href="#Prices" class="closebtn">×</a>
+                        <label id="closeBtn" class="closebtn" for="modalRadioHide">×</label>
                         <h2>Modal Header</h2>
                     </header>
                     <div class="modal-container">
@@ -58,16 +60,5 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('contactsLink').addEventListener('click', function () {
-            document.getElementById('pagesSection').style.display = 'none';
-            console.log('Hide');
-        })
-
-        document.getElementById('closeBtn').addEventListener('click', function () {
-            document.getElementById('pagesSection').style.display = 'block';
-            console.log('show');
-        })
-    </script>
 </body>
 </html>

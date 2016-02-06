@@ -66,6 +66,8 @@
     <Content Include="dropdownMenuCSS.css" />
     <Content Include="dropDownMenuCSS.html" />
     <Content Include="images\cats.jpg" />
+    <Content Include="images\spiffygif333color.gif" />
+    <Content Include="images\large.jpg" />
     <Content Include="index.html" />
     <Content Include="lessExample.css">
       <DependentUpon>lessExample.less</DependentUpon>
@@ -74,10 +76,17 @@
     <Content Include="lessExample.min.css">
       <DependentUpon>lessExample.css</DependentUpon>
     </Content>
+    <Content Include="libs\jquery-2.1.4.js" />
+    <Content Include="libs\jquery.min.js" />
     <Content Include="main.css" />
     <Content Include="dropdownMenuCSSandJS.css" />
     <Content Include="dropdownMenuCSSandJS.html" />
+    <Content Include="partials\time.html" />
     <Content Include="reset.css" />
+    <Content Include="responsiveMenu.css" />
+    <Content Include="responsiveMenu.html" />
+    <Content Include="images\spinner.gif" />
+    <Content Include="spinner.html" />
     <Content Include="treeView.css" />
     <Content Include="treeView.html" />
     <Content Include="tulip-flower-garden.jpg" />

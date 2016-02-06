@@ -6,7 +6,7 @@
 </head>
 <body>
     <nav>
-        <ul>
+        <ul id="main-menu">
             <li>
                 <input id="menu1" type="radio" class="menu-show-hide" name="menu" />
                 <label for="menu1" class="menu-label">Menu 1</label>
@@ -23,7 +23,7 @@
                 </ul>
             </li>
             <li>
-                <input id="menu2" type="radio" class="menu-show-hide" name="menu"/>
+                <input id="menu2" type="radio" class="menu-show-hide" name="menu" />
                 <label for="menu2" class="menu-label">Menu 2</label>
                 <ul class="subMenu">
                     <li>
@@ -55,20 +55,54 @@
         </ul>
     </nav>
     <script>
-        var labels = document.getElementsByClassName('menu-label'),
-            i,
-            length,
+        var mainMenu = document.getElementById('main-menu'),
             radioButton;
-        for (i = 0, length = labels.length; i < length; i += 1) {
-            labels[i].addEventListener('click', function () {
-                radioButton = document.getElementById(this.htmlFor);
+        addEventHandler(mainMenu, 'click', function (event) {
+            console.log('.');
+            var target;
+            if (!event) {
+                event = window.event
+            }
+
+            target = event.target;
+            if (target.className === 'menu-label') {
+                radioButton = document.getElementById(target.htmlFor);
                 if (radioButton.checked) {
                     setTimeout(function () {
                         radioButton.checked = false;
                     }, 10);
                 }
-            });
+            }
+        });
+
+        function addEventHandler(el, eventType, callback, useCapture) {
+            if (document.addEventListener) {
+                el.addEventListener(eventType, callback, useCapture);
+            }
+            else if (document.attachEvent) {
+                el.attachEvent('on' + eventType, callback);
+            }
+            else {
+                el['on' + eventType] = callback;
+            }
         }
+
+        //var labels = document.getElementsByClassName('menu-label'),
+        //    i,
+        //    length,
+        //    radioButton;
+        //for (i = 0, length = labels.length; i < length; i += 1) {
+        //    labels[i].addEventListener('click', hideMenu);
+        //}   
+        
+        //function hideMenu() {
+        //    radioButton = document.getElementById(this.htmlFor);
+        //    if (radioButton.checked) {
+        //        setTimeout(function () {
+        //            radioButton.checked = false;
+        //        }, 10);
+        //    }
+        //}
     </script>
 </body>
 </html>

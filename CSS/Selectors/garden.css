@@ -1,7 +1,25 @@
-﻿@import url(reset.css);
+﻿body, div, p, strong, span, label, input, h1, h2, h3, h4, h5, h6, section, article, nav, aside, header, footer, ul, li, ol{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover, .fakeLink:hover{
+    text-decoration: underline;
+    color: #ccc;
+}
+
+.targetInputs{
+    display: none;
+}
 
 body {
-    color: #ffffff;
+    color: #fff;
     font: oblique normal 500 1.2em/1.4em verdana;
     background: rgb(191,210,85);
     background: url(tulip-garden.jpg), -moz-linear-gradient(-45deg, rgba(191,210,85,1) 0%, rgba(142,185,42,1) 25%, rgba(142,185,42,1) 46%, rgba(114,170,0,1) 70%, rgba(158,203,45,1) 100%);
@@ -81,8 +99,8 @@ li {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-    /* Display the modal when targeted */
-    .modal:target {
+    /* Display the modal */
+    #modalRadioShow:checked + #contacts {
         display: table;
         position: absolute;
     }
