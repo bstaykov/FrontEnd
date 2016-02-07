@@ -2,8 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Web Storages</title>
+    <style>
+        table, tr, td, th{
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+
+        tr:nth-last-of-type(2n - 1){
+            background-color: #ddd;
+        }
+
+        th{
+            background-color: #888;
+        }
+    </style>
 </head>
 <body>
+    <button id="startNewGameButton">Start New Game</button>
+    <label for="userNameInput"> User </label><input id="userNameInput" type="text" placeholder="Username" value="BBB" minlength="3" maxlength="25" />
+    <hr />
+    <button id="guessButton">Guess a number</button>
+    <label for="guessNumber"> Your number </label><input id="guessNumber" type="number" value="1000" min="1000" maxlength="9999" />
+    <hr />
+    <div id="wrapper">
+    </div>
     <script>
         var windowLoadIndex = window.onload;
         window.onload = function () {
@@ -40,8 +62,7 @@
             }
 
             storageTest();
-        }        
-
+        }
     </script>
     <script src="shipGame.js"></script>
 </body>
