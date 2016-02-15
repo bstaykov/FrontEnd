@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumingWebServices", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsWithMochaAndChai", "UnitTestsWithMochaAndChai\UnitTestsWithMochaAndChai.csproj", "{73E4E655-80EC-4B79-B41F-76317D2F8DEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaAppsWithSammyJs", "SpaAppsWithSammyJs\SpaAppsWithSammyJs.csproj", "{14E8E6E4-8CC3-439B-BA74-CA47AD7927CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{73E4E655-80EC-4B79-B41F-76317D2F8DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E4E655-80EC-4B79-B41F-76317D2F8DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E4E655-80EC-4B79-B41F-76317D2F8DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E8E6E4-8CC3-439B-BA74-CA47AD7927CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E8E6E4-8CC3-439B-BA74-CA47AD7927CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E8E6E4-8CC3-439B-BA74-CA47AD7927CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E8E6E4-8CC3-439B-BA74-CA47AD7927CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

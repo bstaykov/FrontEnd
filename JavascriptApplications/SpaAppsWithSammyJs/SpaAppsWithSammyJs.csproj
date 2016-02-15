@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{73E4E655-80EC-4B79-B41F-76317D2F8DEF}</ProjectGuid>
+    <ProjectGuid>{14E8E6E4-8CC3-439B-BA74-CA47AD7927CC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTestsWithMochaAndChai</RootNamespace>
-    <AssemblyName>UnitTestsWithMochaAndChai</AssemblyName>
+    <RootNamespace>SpaAppsWithSammyJs</RootNamespace>
+    <AssemblyName>SpaAppsWithSammyJs</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,19 +57,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="database.js" />
     <Content Include="index.html" />
-    <Content Include="shipGame.js" />
+    <Content Include="templates\people.hbs.js">
+      <DependentUpon>people.html</DependentUpon>
+    </Content>
+    <Content Include="person.js" />
+    <Content Include="tests.html" />
     <Content Include="tests.js" />
-    <Content Include="tests\tests.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tests\node" />
-    <Content Include="tests\README.md" />
-    <Content Include="tests\result.json" />
+    <Content Include="templates\people.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -77,6 +80,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -90,9 +94,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>24336</DevelopmentServerPort>
+          <DevelopmentServerPort>34736</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:24336/</IISUrl>
+          <IISUrl>http://localhost:34736/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

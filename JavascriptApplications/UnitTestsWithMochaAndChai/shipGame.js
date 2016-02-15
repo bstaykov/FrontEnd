@@ -1,5 +1,6 @@
 ﻿var shipGame = (function (storage) {
-    var shipGame = Object.create({}),
+    var validator,
+        shipGame = Object.create({}),
         CONSTANTS = {
             CONST_GUESSED_NUMBER_ERROR_NAME: "Guessed number",
             CONST_HIGH_SCORE_DISPLAYED_PLAYERS_ERROR_NAME: "Displayed players",
