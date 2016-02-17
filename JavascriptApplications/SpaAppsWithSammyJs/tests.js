@@ -75,14 +75,14 @@
         it('expects to increase count with 1 on every adding', function (done) {
             database.add('Mocho', 22)
                 .then(function (response) {
-                    database.add('Mocha', 23)
-                        .then(function (response) {
-                            database.count()
-                                .then(function (count) {
-                                    expect(count).to.eql(2);
-                                    done();
-                                });
-                        });
+                    return database.add('Mocha', 23);
+                })
+                .then(function (response) {
+                    return database.count()
+                })
+                .then(function (count) {
+                    expect(count).to.eql(2);
+                    done();
                 });
         });
     });
@@ -93,17 +93,17 @@
             database.add('Mocho', 22)
                 .then(function (response) {
                     id1 = response.id;
-                    database.add('Mocha', 23)
-                        .then(function (response) {
-                            database.remove(id1)
-                                .then(function (response) {
-                                    database.count()
-                                        .then(function (response) {
-                                            expect(response).to.equal(1);
-                                            done();
-                                        });
-                                });
-                        });
+                    return database.add('Mocha', 23);
+                })
+                .then(function (response) {
+                    return database.remove(id1)
+                })
+                .then(function (response) {
+                    return database.count()
+                })
+                .then(function (response) {
+                    expect(response).to.equal(1);
+                    done();
                 });
         });
 
@@ -121,18 +121,16 @@
             database.add('Mocho', 22)
                 .then(function (response) {
                     id1 = response.id;
-                    database.remove(id1)
-                    .then(function (response) {
-                        database.remove(id1)
-                            .then(function (response) {
-                            }, function (error) {
-                                expect(error).to.eql('Person does not exists!');
-                                done();
-                            });
-                    });
+                    return database.remove(id1);
+                })
+                .then(function (response) {
+                    return database.remove(id1);
+                })
+                .then(function (response) {
+                }, function (error) {
+                    expect(error).to.eql('Person does not exists!');
+                    done();
                 });
-
-
         });
     });
 
@@ -143,13 +141,13 @@
             database.add('Pesho', 22)
                     .then(function (response) {
                         person = response;
-                        database.getById(person.id)
-                            .then(function (response) {
-                                foundPerson = response;
-                                expect(person).to.eql(foundPerson);
-                                done();
-                            });
-                    });
+                        return database.getById(person.id);
+                    })
+                .then(function (response) {
+                    foundPerson = response;
+                    expect(person).to.eql(foundPerson);
+                    done();
+                });
         });
 
         it('expects to return error if person not found', function (done) {
@@ -167,13 +165,13 @@
             var count;
             database.add('Pesho', 23)
                 .then(function (response) {
-                    database.clear()
-                        .then(function (response) {
-                            count = database.count()
-                            .then(function () {
-                                expect(count).to.eql(0);
-                            });
-                        });
+                    return database.clear();
+                })
+                .then(function (response) {
+                    return database.count();
+                })
+                .then(function (count) {
+                    expect(count).to.eql(0);
                 });
         });
     });
@@ -189,7 +187,7 @@
 
         it('expect to return array of people if any', function (done) {
             var responseJSONString,
-                expectedJSONString, 
+                expectedJSONString,
                 id1,
                 id2,
                 name1 = 'Gosho',
@@ -201,15 +199,15 @@
             database.add(name1, age1)
                 .then(function (response) {
                     id1 = response.id;
-                    database.add(name2, age2)
-                        .then(function (response) {
-                            id2 = response.id;
-                            database.get()
-                                .then(function (response) {
-                                    expect(response).to.be.eql([{ name: name1, age: age1, id: id1 }, { name: name2, age: age2, id: id2 }]);
-                                    done();
-                                });
-                        });
+                    return database.add(name2, age2);
+                })
+                .then(function (response) {
+                    id2 = response.id;
+                    return database.get();
+                })
+                .then(function (response) {
+                    expect(response).to.be.eql([{ name: name1, age: age1, id: id1 }, { name: name2, age: age2, id: id2 }]);
+                    done();
                 });
         });
     });

@@ -51,6 +51,7 @@
     </div>
     <script>
         var url = 'partials/data.json',
+            // url = 'partials/time.html',
             loadBtn = document.getElementById('loadBtn'),
             container = document.getElementById('container');
 
@@ -60,15 +61,17 @@
                 method: 'GET',
                 url: url,
                 headers: {},
-                success: getPeopleJSON,
+                success: getPeopleSuccessCallback,
+                // success: getTimeSuccessCallback,
                 error: errorCallback,
             });
         });
 
-        function getPeopleJSON(data) {
+        function getPeopleSuccessCallback(data) {
             data = JSON.parse(data);
             var i,
                 length,
+                divContainer = document.createElement('div'),
                 docFragment = document.createDocumentFragment(),
                 div = document.createElement('div');
 
@@ -77,11 +80,11 @@
                 docFragment.appendChild(div.cloneNode(true));
             }
 
-            container.innerHTML = '';
-            container.appendChild(docFragment);
+            divContainer.appendChild(docFragment);
+            container.innerHTML = divContainer.innerHTML;
         }
 
-        function successCallback(responseText) {
+        function getTimeSuccessCallback(responseText) {
             var script;
             container.innerHTML = responseText;
             script = container.getElementsByTagName('script')[0];
@@ -115,30 +118,40 @@
                     }
                 }
 
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === XMLHttpRequest.LOADING) {
-                        modalLoad.style.display = 'table';
-                    }
-                    else if (xhr.readyState === XMLHttpRequest.DONE) {
-                        var statusType = (xhr.status / 100) | 0;
-                        switch (statusType) {
-                            case 2:
-                                options.success(xhr.responseText);
-                                break;
-                            case 4:
-                            case 5:
-                                options.error(xhr.responseText);
-                                break;
+                var promise = new Promise(function (resolve, reject) {
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === XMLHttpRequest.LOADING) {
+                            modalLoad.style.display = 'table';
                         }
+                        else if (xhr.readyState === XMLHttpRequest.DONE) {
+                            var statusType = (xhr.status / 100) | 0;
+                            switch (statusType) {
+                                case 2:
+                                    if (options.success) {
+                                        options.success(xhr.responseText);
+                                    } else {
+                                        resolve(xhr.responseText);
+                                    }
 
-                        setTimeout(function () {
-                            modalLoad.style.display = 'none';
-                        }, 500);
+                                    break;
+                                case 4:
+                                case 5:
+                                    reject(xhr.statusText);
+
+                                    break;
+                            }
+
+                            setTimeout(function () {
+                                modalLoad.style.display = 'none';
+                            }, 500);
+                        }
                     }
-                }
+                });
 
                 options.data = options.data || null;
                 xhr.send(options.data);
+
+                return promise;
             }
 
             function post(options) {
@@ -159,7 +172,11 @@
                 options.headers = options.headers || {};
                 options.headers['Content-Type'] = 'application/json';
                 options.headers['accepts'] = 'application/json';
-                return send(options);
+                return send(options)
+                    .then(function (text) {
+                        // this will not execute if options.success callback exists
+                        return JSON.parse(text);
+                    });
             }
 
             return {

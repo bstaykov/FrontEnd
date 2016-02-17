@@ -38,7 +38,7 @@
         setTimeout(function () {
             var clonePerson,
                 person = people.find(function (person, index, array) {
-                    return person.id === id;
+                    return person.id == id;
                 });
 
             if (person) {
